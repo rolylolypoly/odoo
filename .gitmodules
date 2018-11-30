@@ -1,0 +1,3 @@
+[submodule "muk_web"]
+	path = muk_web
+	url = https://github.com/muk-it/muk_web
