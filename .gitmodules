@@ -1,3 +1,6 @@
 [submodule "muk_web"]
 	path = muk_web
 	url = https://github.com/muk-it/muk_web
+[submodule "muk_base"]
+	path = muk_base
+	url = https://github.com/muk-it/muk_base.git
