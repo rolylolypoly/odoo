@@ -21,6 +21,7 @@
 # grazziano <gra.negocia@gmail.com>, 2018
 # Yannick Belot <yannickbh@gmail.com>, 2018
 # Marcel Savegnago <marcel.savegnago@gmail.com>, 2018
+# Rafael H L Moretti <rafael.moretti@gmail.com>, 2018
 # Marcelo Costa <marcelo@comdesk.com.br>, 2018
 # 
 msgid ""
@@ -547,7 +548,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_mail_mail__add_sign
 #: model:ir.model.fields,field_description:mail.field_mail_message__add_sign
 msgid "Add Sign"
-msgstr ""
+msgstr "Adicionar sinal"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview__user_signature
@@ -574,7 +575,7 @@ msgstr ""
 #: code:addons/mail/static/src/xml/discuss.xml:71
 #, python-format
 msgid "Add a private channel"
-msgstr ""
+msgstr "Adicionar um canal privado"
 
 #. module: mail
 #: model_terms:ir.actions.act_window,help:mail.mail_blacklist_action
@@ -1950,6 +1951,8 @@ msgid ""
 "Email addresses that are blacklisted means that the recipient won't receive "
 "any mass mailing anymore."
 msgstr ""
+"Endereços de e-mail na lista negra significa que o destinatário não irá mais"
+" receber nenhuma correspondência em massa."
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_compose_message
@@ -5573,7 +5576,7 @@ msgstr ""
 #: code:addons/mail/static/src/xml/thread_window.xml:11
 #, python-format
 msgid "User name"
-msgstr ""
+msgstr "Nome de usuário"
 
 #. module: mail
 #: model:ir.model,name:mail.model_res_users
@@ -5816,6 +5819,12 @@ msgid ""
 "other modules."
 msgstr ""
 "Você não pode excluir estes grupos. Eles são necessários à outros módulos."
+
+#. module: mail
+#: code:addons/mail/models/mail_thread.py:2358
+#, python-format
+msgid "You have been assigned to %s"
+msgstr ""
 
 #. module: mail
 #: model_terms:ir.ui.view,arch_db:mail.message_user_assigned
