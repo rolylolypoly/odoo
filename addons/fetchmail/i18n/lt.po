@@ -49,12 +49,12 @@ msgstr "Papildomi pasirinkimai"
 #: model:ir.model.fields,field_description:fetchmail.field_fetchmail_server__configuration
 #: model_terms:ir.ui.view,arch_db:fetchmail.view_email_server_form
 msgid "Configuration"
-msgstr "Nustatymai"
+msgstr "Konfigūracija"
 
 #. module: fetchmail
 #: selection:fetchmail.server,state:0
 msgid "Confirmed"
-msgstr "Patikrinta"
+msgstr "Patvirtinta"
 
 #. module: fetchmail
 #: code:addons/fetchmail/models/fetchmail.py:136
