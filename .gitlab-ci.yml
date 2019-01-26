@@ -1,0 +1,36 @@
+image: centos:latest
+stages:
+  - deploy
+
+services:
+  - postgres:11
+
+variables:
+  INTERNAL_GITLAB: ""
+
+before_script:
+  - yum update -y
+  - yum install -y epel-release
+  - yum groupinstall -y "development tools"
+  - yum install -y zlib-devel libjpeg-devel libffi-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel expat-devel openldap-devel libxslt-devel libxml2 libxml2-devel libxslt fontconfig libXrender libXext xorg-x11-fonts-Type1 xorg-x11-fonts-75dpi freetype libpng zlib libjpeg-turbo wget
+  - wget http://python.org/ftp/python/3.7.1/Python-3.7.1.tar.xz
+  - tar xf Python-3.7.1.tar.xz
+  - cd Python-3.7.1
+  - ./configure --prefix=/usr/local --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
+  - make && make altinstall
+  - strip /usr/local/lib/libpython3.7m.so.1.0
+  - easy_install pip
+  - cd
+  - yum install -y nodejs
+  - npm install -g less
+  - rpm -Uvh https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.1/wkhtmltox-0.12.1_linux-centos7-amd64.rpm
+
+deploy:
+  script:
+    - export PGHOST="postgres"
+    - export PGUSER="postgres"
+    - export PGPASSWORD=""
+    - git clone $INTERNAL_GITLAB
+    - cd odoo
+    - pip3.7 install -r requirements.txt
+    - python3.7 odoo-bin
