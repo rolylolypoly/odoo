@@ -9,13 +9,7 @@ variables:
   INTERNAL_GITLAB: ""
 
 before_script:
-  - ls
-  - cd ..
-  - ls
-  - cd ..
-  - ls
-  - cd ..
-  - ls
+  - cd ~/odoo
   - yum update -y
   - yum install -y epel-release
   - yum groupinstall -y "development tools"
