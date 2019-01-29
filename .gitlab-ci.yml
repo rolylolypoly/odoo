@@ -9,9 +9,6 @@ variables:
   INTERNAL_GITLAB: ""
 
 before_script:
-  - ls
-  - cd
-  - ls
   - yum update -y
   - yum install -y epel-release
   - yum groupinstall -y "development tools"
@@ -35,6 +32,7 @@ deploy:
     - export PGHOST="postgres"
     - export PGUSER="postgres"
     - export PGPASSWORD=""
+    - cd ~/odoo
     - pip3.7 install --upgrade pip
     - pip3.7 install -r requirements.txt
     - python3.7 odoo-bin
