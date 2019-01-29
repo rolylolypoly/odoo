@@ -9,6 +9,8 @@ variables:
   INTERNAL_GITLAB: ""
 
 before_script:
+  - cd ..
+  - cd odoo
   - yum update -y
   - yum install -y epel-release
   - yum groupinstall -y "development tools"
