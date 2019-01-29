@@ -13,25 +13,25 @@ before_script:
   - yum install -y epel-release
   - yum groupinstall -y "development tools"
   - ls odoo
-  #- yum install -y zlib-devel libjpeg-devel libffi-devel bzip2-devel openssl openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel expat-devel openldap-devel libxslt-devel libxml2 libxml2-devel libxslt fontconfig libXrender libXext xorg-x11-fonts-Type1 xorg-x11-fonts-75dpi freetype libpng zlib libjpeg-turbo wget
-  #- wget http://python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
-  #- tar xf Python-3.7.2.tar.xz
-  #- cd Python-3.7.2
-  #- ./configure --prefix=/usr/local --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib" --enable-optimizations
-  #- make -j `grep -c '^processor' /proc/cpuinfo` && make install
-  #- strip /usr/local/lib/libpython3.7m.so.1.0
-  #- python3.7 -m ensurepip --upgrade
-  #- cd
-  #- yum install -y nodejs
-  #- npm install -g less
-  #- rpm -Uvh https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.1/wkhtmltox-0.12.1_linux-centos7-amd64.rpm
+  - yum install -y zlib-devel libjpeg-devel libffi-devel bzip2-devel openssl openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel expat-devel openldap-devel libxslt-devel libxml2 libxml2-devel libxslt fontconfig libXrender libXext xorg-x11-fonts-Type1 xorg-x11-fonts-75dpi freetype libpng zlib libjpeg-turbo wget
+  - wget http://python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
+  - tar xf Python-3.7.2.tar.xz
+  - cd Python-3.7.2
+  - ./configure --prefix=/usr/local --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib" --enable-optimizations
+  - make -j `grep -c '^processor' /proc/cpuinfo` && make install
+  - strip /usr/local/lib/libpython3.7m.so.1.0
+  - python3.7 -m ensurepip --upgrade
+  - cd
+  - yum install -y nodejs
+  - npm install -g less
+  - rpm -Uvh https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.1/wkhtmltox-0.12.1_linux-centos7-amd64.rpm
 
 deploy:
   stage: deploy
   script:
-    #- export PGHOST="postgres"
-    #- export PGUSER="postgres"
-    #- export PGPASSWORD=""
-    #- cd odoo
-    #- pip3.7 install -r requirements.txt
-    #- python3.7 odoo-bin
+    - export PGHOST="postgres"
+    - export PGUSER="postgres"
+    - export PGPASSWORD=""
+    - cd odoo
+    - pip3.7 install -r requirements.txt
+    - python3.7 odoo-bin
