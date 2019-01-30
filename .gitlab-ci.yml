@@ -9,8 +9,7 @@ variables:
   INTERNAL_GITLAB: ""
 
 before_script:
-  - groupadd odoo
-  - adduser --system --group odoo --shell /bin/bash
+  - adduser odoo --system --user-group --shell /bin/bash
   - yum update -y
   - yum install -y epel-release
   - yum groupinstall -y "development tools"
