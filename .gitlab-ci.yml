@@ -7,6 +7,7 @@ services:
 
 variables:
   INTERNAL_GITLAB: ""
+  GIT_SUBMODULE_STRATEGY: recursive
 
 before_script:
   - adduser odoo --system --user-group --shell /bin/bash
@@ -28,7 +29,7 @@ before_script:
   - rpm -Uvh https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.1/wkhtmltox-0.12.1_linux-centos7-amd64.rpm
 
 deploy:
-  stage: deploy
+  stage: staging
   script:
     - export PGHOST="postgres"
     - export PGUSER="postgresuser"
