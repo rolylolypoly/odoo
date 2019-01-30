@@ -30,7 +30,7 @@ deploy:
   stage: deploy
   script:
     - export PGHOST="postgres"
-    - export PGUSER="postgres"
+    - export PGUSER="postgresuser"
     - export PGPASSWORD=""
     - cd /builds/root/odoo
     - pip3.7 install --upgrade pip
