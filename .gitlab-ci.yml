@@ -30,6 +30,8 @@ before_script:
 
 deploy:
   stage: staging
+  environment:
+    name: staging
   script:
     - export PGHOST="postgres"
     - export PGUSER="postgresuser"
