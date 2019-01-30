@@ -35,5 +35,6 @@ deploy:
     - cd /builds/root/odoo
     - pip3.7 install --upgrade pip
     - pip3.7 install -r requirements.txt
+    - addgroup odoo
     - adduser --system --group odoo
     - su odoo -s /bin/bash -c "python3.7 odoo-bin --db_user postgresuser"
